@@ -48,6 +48,8 @@ Introduction
    +--------------------------------------+----+---------+----------+
    | Software Docs                        | Y  |         | read     |
    +--------------------------------------+----+---------+----------+
+   | Documentation Index                  | Y  |         | read     |
+   +--------------------------------------+----+---------+----------+
 
 .. _chat:
 
@@ -69,18 +71,21 @@ For this reason we are building a culture that redirects chat complex or importa
 - The Request for Discussion (|rfd|) to schedule a time slot for a video conference-based discussion
 - The Request for Comments (|rfc|) to formally propose and gain feedback on a proposal that has design or process ramifications.
 
+ChatOps
+-------
+
 We also use Chat for real time monitoring of software builds and tests and to automatically broadcast announcements of |rfc|\ s/|rfd|\ s.
 This is a basic form of *ChatOps,* where infrastructure is controlled through a chat interface.
 Companies like GitHub, for example, use ChatOps to control servers and react to operational events.
 The advantage of doing this is that diverse and geographically distributed teams can collaborate in real-time.
-DM and SQuaRE would like to expand our use of Chat into ChatOps, though there are no concrete plans at present.
+DM and SQuaRE would like to expand our use of Chat into ChatOps, likely with `StackStorm and Hubot <http://stackstorm.com/2015/06/08/enhanced-chatops-from-stackstorm/>`_, though this work is not yet planned.
 
 .. _slack:
 
 Motivation for the transition to Slack
 --------------------------------------
 
-There is no external participation because HipChat is tied to LSST's single sign-on.
+See `RFC-140 <https://jira.lsstcorp.org/browse/RFC-140>`_.
 
 .. _community:
 
@@ -103,49 +108,53 @@ Key qualities of Community are:
 Categories and the organization of conversations
 ------------------------------------------------
 
-Announcements
+`Announcements <https://community.lsst.org/c/announce>`_
    For major announcements. Originally this category was intended to be equivalent to the ``dm-announce@lists.lsst.org`` mailing list to announce software releases. As the scope of Community has grown, the scope of Announcements has also grown to be more Project-holistic. This is an area where DM collaboration with LSST Communications would be beneficial.
 
-Data Management
+`Data Management <https://community.lsst.org/c/dm>`_
    Conversations within the DM team, open to the public.
 
    ``Data Management`` also includes several sub-categories:
 
-   DM Notifications
+   `DM Notifications <https://community.lsst.org/c/dm/dm-notifications>`_
       Brief broadcasts within the DM to alert team members of new features or changes to the software stack and infrastructure.
 
-      DM Notifications also hosts our weekly `DM Activity Highlights series <https://community.lsst.org/tags/dm-highlights>`.
+      DM Notifications also hosts our weekly `DM Activity Highlights series <https://community.lsst.org/tags/dm-highlights>`_ series that summarizes DM activity at very technical level.
    
    DM Team
       A category visible only to members of the ``LSSTDM`` group (seldom used given our policy of open communication)
 
-Support
+`Support <https://community.lsst.org/c/qa>`_
    Question-and-answer category for users of LSST Software and Data to resolve issues (with DM Staff and other community members). Accepted solutions are marked to organically build a knowledge base for other users.
 
-Simulations
+`Simulations <https://community.lsst.org/c/sims>`_
    Conversations within the Simulations team, open to the public.
 
-Camera
+`Camera <https://community.lsst.org/c/camera>`_
    Conversations within the Camera team, open to the public. This category is not actively used.
 
-Cross-System Discussions
+`Cross-System Discussions <https://community.lsst.org/c/systems>`_
    This category hosts sub-categories for conversations between LSST subsystems to work on interfaces.
 
-Project
+LSST Project
    This category is only visible to LSST project members (``LSST`` group). It has been used to debrief conferences and offer frank discussions.
 
 Planned and Possible Categories
 -------------------------------
 
-.. todo::
-
-   'Ask LSST' category
+Ask LSST
+   This category, sponsored by the Project Science Team, will provide the science collaborations, and the astronomy community in general, a venue to ask questions about how LSST will operate and serve their science goals and receive official answers from the project.
+   Such a Q&A venue will offer an appealing alternative to getting answers through our technical documentation or through one-on-one conversations that don't scale.
+   Technically, this category will operate similarly to the Support category.
 
 Broadcasting to mailing lists (Community Mailbot)
 -------------------------------------------------
 
 Community was intended to replace DM's mailing lists, and it has: conversations no longer occur on the ``dm-devel`` and ``dm-user`` mailing lists.
 However, we also recognized that these mailing lists have value in reliably reaching a large audience.
+Thus we built the `Community Mailbot <https://github.com/lsst-sqre/community_mailbot>`_ to forward new topics in select categories to the existing DM mailing lists.
+The forwarded email contains the text of the original topic post along with an unambiguous button inviting readers to participate in the discussion on https://community.lsst.org.
+We use Mandrill, by Mailchimp, to send these emails.
 
 Project group management
 ------------------------
@@ -153,7 +162,7 @@ Project group management
 As discussed, we assign project staff to 'groups' within Community that offer higher Discourse trust levels and access to private categories.
 Currently this assignment is managed manually by SQuaRE and DM T/CAMs.
 As Community's use grows across the project, this may arrangement will scale poorly.
-This would ultimately be solved if the Contacts DB, or its equivalent, could be accessed by a RESTful API.
+This would ultimately be solved if the Contacts DB, or its equivalent, could be accessed by a standard, well specified API.
 
 .. _confluence:
 
@@ -187,18 +196,17 @@ See the Developer Guide for a complete overview of how tickets are used to repor
 Pull Requests
 -------------
 
-During a code review, conversations relating to a work ticket shift to GitHub's pull request platform, as described in the Developer Guide.
-TODO: link.
+During a code review, conversations relating to a work ticket shift to GitHub's pull request platform, as described in the `Developer Guide <http://developer.lsst.io/en/latest/processes/workflow.html#code-review-discussion>`_.
 We do this because GitHub Pull Requests allow conversations that are tightly coupled to the code.
 
 
 GitHub Issues and Community-driven bug reporting
 ------------------------------------------------
 
-We do *not* use GitHub issues within DM since they would conflict with the JIRA system upon which our accounting is built.
+We do *not* use GitHub issues within DM since they would conflict with the JIRA system upon which our project management system is built.
 However, we have left GitHub issues available since they are a part of the fabric of the open source software community---without GitHub issues, an external user would likely not make the effort to find out how to report a bug.
 Our current policy is to to triage these GitHub issues into JIRA tickets.
-See also RFC-147 'Best practices to report an issue with DM system' for discussion surrounding how to support bug reports from the community.
+See also `RFC-147 'Best practices to report an issue with DM system' <https://jira.lsstcorp.org/browse/RFC-147>`_ for discussion surrounding how to support bug reports from the community.
 
 .. _RFC:
 
@@ -210,7 +218,7 @@ We use RFCs to allow anyone in the team to make proposals that have ramification
 RFCs may be issued for changes in third-party dependencies, changes to designs and interfaces within the DM software, or changes to our developer processes.
 The RFC platform is hosted on JIRA so that decision status and linkage to work tickets can be tracked.
 
-See the Developer Guide for more information.
+See the `Developer Guide <http://developer.lsst.io/en/latest/processes/decision_process.html#request-for-comments-rfc-process>`_ for more information.
 
 .. _RFD:
 
@@ -221,29 +229,104 @@ Although DM has regular meetings for specific individuals, there is often a need
 For this need we use the Request for Discussion process (RFD).
 RFDs meetings are held in a standing weekly time slot, with a JIRA project being used to reserve that time slot.
 
-See the Developer Guide for more information.
+See the `Developer Guide <http://developer.lsst.io/en/latest/processes/decision_process.html#request-for-discussion-rfd-process>`_ for more information.
 
 .. _LTD:
 
 LSST the Docs Publishing Platform
 =================================
 
+*LSST the Docs* is a publishing platform and ecosystem that underpins DM's various flavors of technical documentation: change-controlled documents, technical notes, the Developer Guide, and software/data documentation.
+The platform is intended to give our development team a set of common tools to write documents in a consistent style, while using best practices to deploy (publish) documentation.
+This allows our development team to communicate effectively and efficiently, and benefit from a core technical base built by the DM team and the open source community.
+
+*LSST the Docs* can be summarized by a stack of technologies: reStructuredText, GitHub, Sphinx, and the *LSST the Docs* continuous delivery service.
+
+ReStructured Text
+-----------------
+
+ReStructuredText is a plain-text markup language, similar to Markdown and LaTeX.
+We specifically chose reStructuredText because it *the* standard markup language in the Python community (in which DM participates) and because it is explicitly designed to be user-extensible.
+These extensions come from both the open source community (including rich tools for writing Math and documenting application programming interfaces) and DM itself (such as a short-hand for referencing other DM documents, or a system for citing astronomical literature, among other possibilities).
+
+GitHub collaboration
+--------------------
+
+Since they are simple plain text files, reStructuredText documents are managed GitHub and benefit from DM's regular `development workflow <http://developer.lsst.io/en/latest/processes/workflow.html>`_ (including ticketing and reviews).
+This collaboration model is not possible with Confluence wiki pages or word processor files.
+
+Sphinx and web-native documentation
+-----------------------------------
+
+By writing in reStructuredText, we also benefit from the `Sphinx <http://www.sphinx-doc.org/en/stable/>`_ tool for building documentation websites.
+Natively publishing documents to the web, as opposed to static PDF files, is fundamental to successful, modern documentation.
+
+- Information is discoverable through search and hyperlinks (including deep links to specific sections).
+  There is no dissonance from switching from searching for a document on the web and then reading reading it elsewhere in a PDF viewer.
+- Web-based documentation naturally builds an organic network of internal links that improve content wayfinding.
+- Websites are rendered equally well on small and large screens, thanks to responsive design practices.
+- Websites can include interactive elements, such as dynamic figures or Python notebooks to test code.
+- Websites can be updated continuously.
+
+In *LSST the Docs*, PDF is treated as an archival format, while the web site is the reader-facing product.
+
+Continuous documentation delivery with LSST the Docs
+----------------------------------------------------
+
+Continuous delivery describes a process where documentation is ready for publication whenever content is changed, thanks to a highly automated pipeline.
+When revised documentation content is pushed to GitHub, it is built, tested, and made available in a staging environment to the team.
+When a team choses (using my merging changes to the GitHub master), the new content to automatically published.
+
+`Read the Docs <https://readthedocs.org/>`_ is popular continuous delivery service for Sphinx documentation, and we have used it widely for technical notes and design documents.
+However, Read the Docs limits our ability to provision new documentation projects through an well-defined API, and more fundamentally, limits our ability to control the build environment for documentation.
+LSST software documentation requires that the software itself be built, which demands a customized build environment.
+To solve these issues, we have built a service described in `SQR-006: Documentation Deployment Service for LSST's Eups-based Software <http://sqr-006.lsst.io/>`_.
+
 Domains: lsst.org/codes/io
 --------------------------
+
+TODO
 
 Change-Controlled Design Documents
 ==================================
 
+TODO
+
 Technical Notes
 ===============
+
+TODO
+
+See `SQR-000: The LSST DM Technical Note Publishing Platform <http://sqr-000.lsst.io/en/master/>`_ for more information.
 
 Developer Guide
 ===============
 
+TODO
+
+https://developer.lsst.io
+
 Software Documentation
 ======================
 
-Hello
+TODO
+
+A Documentation Index
+=====================
+
+TODO
+
+LSST's documentation, as described above, consists of a constellation of design documents, technical notes, and documentation sites for specific software projects and data releases.
+In addition, DM also produces presentations, conference proceedings and published academic articles.
+For these to documents to be effective, they need to be discoverable.
+We intend to solve the documentation discovery problem with a highly useable, well publicized, central documentation landing page.
+
+- Dynamically updated when new documents are published by LSST the Docs, or made available in ADS/Zenodo.
+- Full-text search
+- Browse by content type, and also by subject
+- Curated collections of documents (e.g top documentation for scientists).
+- Awareness of documentation versions; ability to choose a version of the document
+- Landing page should be curated to get readers to top documents, such as the Science Pipelines documentation.
 
 .. |clo| replace:: Community_
 
