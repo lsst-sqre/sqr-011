@@ -18,9 +18,10 @@ doc_title: 'LSST Data Management Communications Strategy'
 # Author names, ordered as a list. Each author name should be formatted as 'First Last'
 authors:
     - 'Jonathan Sick'
+    - 'Frossie Economou'
 
 # Current document version
-last_revised: '2016-03-09'
+last_revised: '2016-03-21'
 
 # Version. Use Semvar, e.g., 1.0, including .dev, as necessary
 # This version string should correspond to the git tag when the document is published on Zenodo
