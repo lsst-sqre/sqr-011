@@ -8,76 +8,117 @@
    It also sketches out ways in which these platforms could support future project-wide communication strategies under various policies. 
 
 LSST Data Management uses a number of technical communication and documentation platforms to address our needs, with the SQuaRE team leading the management (and development, when necessary) of these platforms.
-Each platform addresses a specific niche of audience (DM, Project or our science community), synchronicity (real-time, asynchronous, or broadcast), and task (e.g., work ticketing, documenting designs, manuals, etc).
+Each platform addresses a specific niche of audience (DM, Project or our science community), synchronicity (real-time, asynchronous, or broadcast), and task (e.g., work ticketing, documenting designs, manuals).
 
 In this document we outline SQuaRE's communication support services and speculate now they could be used to support a project-wide communication strategy.
 Note, however, that while we have chosen some of these platforms for their ability to support a wider outreach into the project and the community, they can all be restricted to their current audiences if project policy demands it.
 
-DM's communications platform strategy has evolved rapidly since Summer
-2015 with the appointment of our Documentation Engineer, so this
-document also takes the opportunity to foreshadow platform
-migrations that are underway.
+DM's communications platform strategy has evolved rapidly since Summer 2015 with the appointment of our Documentation Engineer, so this document also takes the opportunity to foreshadow platform migrations that are underway.
 
-How are tools selected
+How tools are selected
 ======================
 
-With all communication tools, there is always a balance of providing users a diversity of tools that they want to use and consolidating tools so that information does not fragment and to boost the network effect.
+With all communication tools, there is always a balance of providing users a diversity of tools that they want to use and consolidating tools so that information does not fragment.
 We have found that the parameter space of task, synchronicity and audience do require multiple tools, but we favor only having one supported tool for each locus in that space.
 
 How do we select that tool? We weigh in a number of factors:
 
-- Ease of development with the tool (can we build the services we need around this tool)
+- Ease of development with the tool (*Can we build the services we need around this tool?*).
 
-- Quality of support for the tool (rate of bug fixes, new features etc)
+- Quality of support for the tool (rate of bug fixes, new features, for example).
 
-- User preference within the project (polling, discussions)
+- User preference within the project (polling, discussions).
 
-- Prevailing usage outside the project (do our collaborators or shared staff use this tool in their other projects?)
+- Prevailing usage outside the project (do our collaborators or shared staff use this tool in their other projects?).
 
-- Cost (after seeking open source or non-profit discounting)
+- Cost (after seeking open source or non-profit discounting).
 
-- Cost/Benefit of effort required for migration, when a previous tool has already been used in that space. 
+- Cost/Benefit of effort required for migration, when a previous tool has already been used in that space.
 
 .. _overview:
 
 Overview
 ========
 
-This is an overview of our current understanding of how the various tools and platforms cover the audience space. 
+This table is a summary of the DM communication platforms, along with our current understanding of how the various tools and platforms cover the audience space. 
+
+.. _platforms:
 
 .. table:: DM Communication Platforms and Intended Audiences
 
-   +--------------------------------------+-------------------------+
-   |                                      | Audience                |
-   |                                      +----+---------+----------+
-   | Platform                             | DM | Project | External |
-   +======+===============================+====+=========+==========+
-   | Chat | HipChat                       | Y  | ~       | N        |
-   |      +-------------------------------+----+---------+----------+
-   |      | Slack (RFC-140)               | Y  | ~       | possible |
-   +------+-------------------------------+----+---------+----------+
-   | Community                            | Y  | Y       | Y        |
-   +--------------------------------------+----+---------+----------+
-   | Confluence                           | Y  | Y       | read     |
-   +--------------------------------------+----+---------+----------+
-   | JIRA Tickets                         | Y  | Y       | read     |
-   +--------------------------------------+----+---------+----------+
-   | GitHub Issues                        | N  |  N      | Y        |
-   +--------------------------------------+----+---------+----------+
-   | GitHub Pull Requests                 | Y  | Y       | Y        |
-   +----------------------+---------------+----+---------+----------+
-   | Design Documentation | LSST the Docs | Y  | read    | read     |
-   |                      +---------------+----+---------+----------+
-   |                      | Docushare     | Y  | Y       | ?        |
-   +----------------------+---------------+----+---------+----------+
-   | Technical Notes                      | Y  | ?       | read     |
-   +--------------------------------------+----+---------+----------+
-   | Developer Guide                      | Y  | read    | read     |
-   +--------------------------------------+----+---------+----------+
-   | Software Docs                        | Y  | read    | read     |
-   +--------------------------------------+----+---------+----------+
-   | Documentation Index                  | Y  | read    | read     |
-   +--------------------------------------+----+---------+----------+
+   +-------------------------------+---------------------------+
+   |                               | Audience                  |
+   |                               +------+---------+----------+
+   | Platform                      | DM   | Project | External |
+   +======+========================+======+=========+==========+
+   | Chat | HipChat                | Y    | ~       | N        |
+   |      +------------------------+------+---------+----------+
+   |      | Slack (RFC-140)        | Y    | ~       | possible |
+   +------+------------------------+------+---------+----------+
+   | Community                     | Y    | Y       | Y        |
+   +-------------------------------+------+---------+----------+
+   | Confluence                    | Y    | Y       | read     |
+   +-------------------------------+------+---------+----------+
+   | JIRA Tickets                  | Y    | Y       | read     |
+   +-------------------------------+------+---------+----------+
+   | GitHub Issues                 | N    | N       | Y        |
+   +-------------------------------+------+---------+----------+
+   | GitHub Pull Requests          | Y    | Y       | Y        |
+   +-------------------------------+------+---------+----------+
+   | Request for Comments (RFC)    | Y    | ~       | read     |
+   +---------------+---------------+------+---------+----------+
+   | Design        | LSST the Docs | Y    | read    | read     |
+   | Documentation +---------------+------+---------+----------+
+   |               | Docushare     | Y    | Y       | ?        |
+   +---------------+---------------+------+---------+----------+
+   | Technical Notes               | Y    | ?       | read     |
+   +-------------------------------+------+---------+----------+
+   | Developer Guide               | Y    | read    | read     |
+   +-------------------------------+------+---------+----------+
+   | Software Docs                 | Y    | read    | read     |
+   +-------------------------------+------+---------+----------+
+   | Documentation Index           | read | read    | read     |
+   +-------------------------------+------+---------+----------+
+
+On a moment-by-moment basis, DM team members use Chat, JIRA tickets and GitHub Pull Request threads to collaborate.
+More asynchronously, we use the Community forum to have long-form conversations and broadcast announcements, use the Confluence wiki for posting ad-hoc information, and use Request for Comments (RFC) to make decisions.
+Finally, we use the LSST the Docs platform to document designs (Design Documents) and processes (Developer Guides), report on work and experiments (Technical Notes), and document our software for both internal and external users.
+
+Communication and documentation as a shared DM responsibility
+-------------------------------------------------------------
+
+There are no communication gatekeepers within Data Management.
+Every team member can participate in, and is responsible for, communicating and documenting DM work.
+We use a regular review process to vet documentation, either with peers or a Technical Control Team for controlled documents.
+
+Traditionally, many organization create participation barriers to their communication platforms through the complexity of systems that publish to the web or elsewhere.
+As the maintainer and developer of DM's communication platforms, SQuaRE is committed to making our platforms accessible and easy to use through automation.
+For example, our aim is to allow a team member to publish a new technical note to the web immediately, or update software documentation without any effort beyond writing the content itself.
+
+Making information accessible outside Data Management
+-----------------------------------------------------
+
+As an open source software organization, Data Management is culturally aligned with making information openly available beyond the team.
+This is why the community is granted at least read access to nearly all DM communication platforms listed in :numref:`platforms`.
+While all of these artifacts (JIRA tickets, technical notes, Zenodo depositions and so on) make sense in their authoring context, we recognize that the external community needs a simpler view into LSST Data Management information.
+Our strategy is to treat only two DM platforms as entry points; all other information should be discoverable from these platforms.
+
+The first entry point is the Community forum.
+Questions on the forum will be answered with links to documents deeper in the DM information hierarchy, such as pages in software documentation, technical notes, and so forth.
+The community forum, in essence becomes an interactive search engine into LSST's documentation, in addition to being a space to discover gaps in our documentation and draft new content.
+:ref:`We specifically discusss the Community forum later in this technical note. <community>`.
+
+(Also, since DM's information is accessible on the open web---without login walls---we also organically benefit from web search and social media entry points.
+DM's documentation, itself, is also highly self-referential.)
+
+The second entry point is a *planned* Data Management Documentation Index web site.
+Where the Community forum is highly contextual and serendipitous, the Documentation Index  support systematic and comprehensive documentation discovery.
+We will allow readers to browse DM documents by type (software documentation, design document, technical note, presentation, paper, source code), subject area, as well as full-text search.
+The Documentation Index will also have curated categories to highlight new and key information for user groups.
+The Documentation Index will kept up-to-date by hooking into the LSST the Docs, Zenodo, and ADS platforms that host or archive DM's artifacts.
+:ref:`We discuss the Documentation Index later in this technical note. <doc-index>`.
+
+Again, the advantage of this architecture is that DM only needs to promote two URLs to the community to effectively market our entire information portfolio.
 
 .. _chat:
 
@@ -307,7 +348,7 @@ We use RFCs to allow anyone in the team to propose work that has ramifications a
 RFCs may be issued for changes in third-party dependencies, changes to designs and interfaces within the DM software, or changes to our developer processes.
 The RFC platform is hosted on JIRA so that decision status and linkage to work tickets can be tracked.
 
-See the `Developer Guide <http://developer.lsst.io/en/latest/processes/decision_process.html#request-for-comments-rfc-process>`_ for more information.
+See the `RFC page in the Developer Guide <http://developer.lsst.io/en/latest/processes/decision_process.html#request-for-comments-rfc-process>`_ for more information.
 
 .. _RFD:
 
@@ -416,6 +457,8 @@ Software Documentation
 ======================
 
 [do we need to talk about this?]
+
+.. _doc-index:
 
 A Documentation Index
 =====================
