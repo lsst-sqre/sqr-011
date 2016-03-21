@@ -464,9 +464,10 @@ source community.
 *LSST the Docs* can be summarized by a stack of technologies:
 reStructuredText, GitHub, Sphinx, and the *LSST the Docs* continuous
 delivery service. The name *LSST the Docs" is in reference to the
-highly popular documentation service *Read the Docs* which
-unfortunately we could not use for our stack documentation due to
-certain characteristics of the stack.
+highly popular documentation service *Read the Docs* - we explain
+below why we could not just us that service off the shelf (which is
+normally our preference).
+
 
 ReStructured Text
 -----------------
@@ -555,6 +556,8 @@ documents (be they RST or LaTeX or Word), we continue to do
 so. However our users are unhappy with the Docushare user experience,
 hence why we do not depend it to be the sole index of our documentation.
 
+While we support authors who wish to write documents in the LSST the Doc platform, 
+
 Technical Notes
 ===============
 
@@ -571,15 +574,16 @@ encapsulates our development policies and practices.
 
 https://developer.lsst.io
 
+
 Software Documentation
 ======================
 
-TODO
+[do we need to talk about this?]
 
 A Documentation Index
 =====================
 
-TODO
+[This section describes future work]
 
 LSST's documentation, as described above, consists of a constellation
 of design documents, technical notes, and documentation sites for
