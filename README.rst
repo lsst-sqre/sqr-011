@@ -1,6 +1,6 @@
-####################################################
-SQR-011 LSST Data Management Communications Strategy
-####################################################
+#####################################################
+SQR-011 LSST Data Management Communications Platforms
+#####################################################
 
 Overview of LSST DM's communication and documentation platforms, including: chat, ticketing, forums, technical notes and software documentation.
 
