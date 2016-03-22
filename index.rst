@@ -46,43 +46,51 @@ This table is a summary of the DM communication platforms, along with our curren
 
 .. table:: DM Communication Platforms and Intended Audiences
 
-   +-------------------------------+---------------------------+
-   |                               | Audience                  |
-   |                               +------+---------+----------+
-   | Platform                      | DM   | Project | External |
-   +======+========================+======+=========+==========+
-   | Chat | HipChat                | Y    | ~       | N        |
-   |      +------------------------+------+---------+----------+
-   |      | Slack (RFC-140)        | Y    | ~       | possible |
-   +------+------------------------+------+---------+----------+
-   | Community                     | Y    | Y       | Y        |
-   +-------------------------------+------+---------+----------+
-   | Confluence                    | Y    | Y       | read     |
-   +-------------------------------+------+---------+----------+
-   | JIRA Tickets                  | Y    | Y       | read     |
-   +-------------------------------+------+---------+----------+
-   | GitHub Issues                 | N    | N       | Y        |
-   +-------------------------------+------+---------+----------+
-   | GitHub Pull Requests          | Y    | Y       | Y        |
-   +-------------------------------+------+---------+----------+
-   | Request for Comments (RFC)    | Y    | ~       | read     |
-   +---------------+---------------+------+---------+----------+
-   | Design        | LSST the Docs | Y    | read    | read     |
-   | Documentation +---------------+------+---------+----------+
-   |               | Docushare     | Y    | Y       | ?        |
-   +---------------+---------------+------+---------+----------+
-   | Technical Notes               | Y    | ?       | read     |
-   +-------------------------------+------+---------+----------+
-   | Developer Guide               | Y    | read    | read     |
-   +-------------------------------+------+---------+----------+
-   | Software Docs                 | Y    | read    | read     |
-   +-------------------------------+------+---------+----------+
-   | Documentation Index           | read | read    | read     |
-   +-------------------------------+------+---------+----------+
+   +-------------------------------+----------------------------+
+   |                               | Audience                   |
+   |                               +-------+---------+----------+
+   | Platform                      | DM    | Project | External |
+   +======+========================+=======+=========+==========+
+   | Chat | HipChat                | Y     | ~       | N        |
+   |      +------------------------+-------+---------+----------+
+   |      | Slack (RFC-140)        | Y     | ~       | possible |
+   +------+------------------------+-------+---------+----------+
+   | Community                     | Y     | Y       | Y        |
+   +-------------------------------+-------+---------+----------+
+   | Confluence                    | Y     | Y       | read     |
+   +-------------------------------+-------+---------+----------+
+   | JIRA Tickets                  | Y     | Y       | read     |
+   +-------------------------------+-------+---------+----------+
+   | GitHub Issues                 | N     | N       | Y        |
+   +-------------------------------+-------+---------+----------+
+   | GitHub Pull Requests          | Y     | Y       | Y        |
+   +-------------------------------+-------+---------+----------+
+   | Request for Comments (RFC)    | Y     | ~       | read     |
+   +---------------+---------------+-------+---------+----------+
+   | Design        | LSST the Docs | Y     | read    | read     |
+   | Documentation +---------------+-------+---------+----------+
+   |               | Docushare     | Y     | Y       | ?        |
+   +---------------+---------------+-------+---------+----------+
+   | Technical Notes               | Y     | ?       | read     |
+   +-------------------------------+-------+---------+----------+
+   | Developer Guide               | Y     | read    | read     |
+   +-------------------------------+-------+---------+----------+
+   | Software Docs                 | Y     | read    | read     |
+   +-------------------------------+-------+---------+----------+
+   | Documentation Index           | read  | read    | read     |
+   +-------------------------------+-------+---------+----------+
+   | NASA/SAO ADS                  | ~     | ~       | read     |
+   +-------------------------------+-------+---------+----------+
+   | Zenodo                        | write | ~       | ~        |
+   +-------------------------------+-------+---------+----------+
+   | Docushare                     | write | Y       | ~        |
+   +-------------------------------+-------+---------+----------+
 
 On a moment-by-moment basis, DM team members use Chat, JIRA tickets and GitHub Pull Request threads to collaborate.
 More asynchronously, we use the Community forum to have long-form conversations and broadcast announcements, use the Confluence wiki for posting ad-hoc information, and use Request for Comments (RFC) to make decisions.
 Finally, we use the LSST the Docs platform to document designs (Design Documents) and processes (Developer Guides), report on work and experiments (Technical Notes), and document our software for both internal and external users.
+Document indices, such as the DM Documenation Index and the NASA/SAO Astrophysics Data System ensure that DM communications are discoverable.
+Finally, we use archives such as Zenodo and Docushare, though these are not intended to be user-facing services.
 
 Communication and documentation as a shared DM responsibility
 -------------------------------------------------------------
@@ -458,6 +466,44 @@ Software Documentation
 
 [do we need to talk about this?]
 
+.. _archives:
+
+Digital Archives: Docushare & Zenodo
+====================================
+
+DM makes use of Docushare and Zenodo are archival services for our released documentation artifacts.
+
+Docushare
+---------
+
+As is standard practice in LSST, Docushare is used to archive all approved changed-controlled documents.
+Our standard practice is to generate and deposit PDFs of the original web document into Docushare.
+
+Zenodo
+------
+
+Zenodo is a digital archive operated by CERN that provides reasonable assurances of data longevity such that it can issue Digital Object Identifiers (DOIs).
+DOIs allow digital artifacts to be cited in academic literature.
+DM uses Zenodo to archive released versions of our documents that are relevant to scientific literature, such as technical notes, presentations, software, and software documentation.
+Note that the LSST Publication Board has also adopted Zenodo as an archive for LSST presentations.
+
+Any researcher can upload artifacts to Zenodo and receive a DOI.
+Curation occurs when an artifact is submitted to a Zenodo Community.
+We curate an `LSST Data Management (lsst-dm) community <http://zenodo.org/lsst-dm>`_ on Zenodo that *can* be browsed.
+
+Metadata preparation is a barrier to uploading to Zenodo.
+We are building a Python tool, Zenodio <http://zenodio.lsst.io>`_, to help automate the process of completing deposition metadata and uploading to Zenodo.
+Our technical note and design document repositories, for instance, include user-editable metadata files that are used by LSST the Docs and Zenodio tools.
+We also expect that Zenodo will make it possible for Community curators to edit the metadata of accepted artifacts.
+
+Archives as band-end services
+-----------------------------
+
+Although these archives serve necessary and useful functions, we do not promote these Docushare or Zenodo as user-facing points of entry for DM documentation.
+We do not believe that Docushare, nor Zenodo, provide the types of document search, curation and discovery affordances.
+It is also desirable to view a document in its original, web native form rather than a static PDF deposited in an archive.
+Thus we treat Docushare and Zenodo largely as back-end services necessary for fulfilling archival requirements set by the LSST project or academic publishers.
+
 .. _doc-index:
 
 A Documentation Index
@@ -477,6 +523,16 @@ We intend to solve the documentation discovery problem with a highly useable, we
 - Curated collections of documents (e.g top documentation for scientists).
 - Awareness of documentation versions; ability to choose a version of the document
 - Landing page should be curated to get readers to top documents, such as the Science Pipelines documentation.
+
+NASA/SAO Astrophysics Data System (ADS)
+=======================================
+
+*This section descries future work.*
+
+In addition to our own Document Index, we also also push documents to the NASA/SAO Astrophysics Data System.
+ADS is an immensely successful literature database for astronomy such that being part of the astronomical literature is synonymous with being listed on ADS.
+Thus we list DM technical notes on ADS so that they can be cited in literature. 
+Note that Zenodo is key to this process since Zenodo furnishes the DOI and archival assurances required by ADS.
 
 .. |clo| replace:: Community_
 
