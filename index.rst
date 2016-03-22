@@ -212,7 +212,7 @@ Key qualities of Community as an asynchronous forum implementation are:
 - *An open platform.*
   Anyone can create an account on Community and participate in discussions (although an account is not necessary to read content) without going through a gatekeeper.
   The Discourse platform protects itself from spam with a graduated system, although DM allows project members to short-cut the trust accrual algorithm by assigning project members to specific groups.
-  And although Community, certain categories can be made viewable and/or writeable to only certain user groups.
+  And although Community is not meant to be a highly secure and private platform, certain categories can be made viewable and/or writeable to only certain user groups.
 
 - *Support for categories* so that different types of conversations can be segregated, while still making it easy to see all conversations happening on the forum.
 
@@ -276,7 +276,6 @@ However, we also recognized that these mailing lists have value in reliably reac
 Thus we built the `Community Mailbot <https://github.com/lsst-sqre/community_mailbot>`_ to forward new topics in select categories to the existing DM mailing lists.
 The forwarded email contains the text of the original topic post along with an unambiguous button inviting readers to participate in the discussion on https://community.lsst.org.
 Echoing forum activity to an e-mail gateway has been common practice since the early days of the Internet. 
-
 SQuaRE uses Mandrill, by Mailchimp, to send these emails.
 
 Project group management
@@ -382,8 +381,8 @@ This allows our development team to communicate effectively and efficiently, and
 The name *LSST the Docs" is in reference to the highly popular documentation service *Read the Docs*---we explain below why we could not just us that service off the shelf (which is normally our preference).
 
 
-ReStructured Text
------------------
+ReStructuredText
+----------------
 
 ReStructuredText is a plain-text markup language, similar to Markdown and LaTeX.
 We specifically chose reStructuredText because it *the* standard markup language in the Python community (in which DM participates) and because it is explicitly designed to be user-extensible.
@@ -419,12 +418,13 @@ Continuous documentation delivery with LSST the Docs
 
 Continuous delivery describes a process where documentation is ready for publication whenever content is changed, thanks to a highly automated pipeline.
 When revised documentation content is pushed to GitHub, it is built, tested, and made available in a staging environment to the team.
-When a team choses (using my merging changes to the GitHub master), the new content to automatically published.
+When a team choses (usually by merging changes to the GitHub master), the new content to automatically published.
 
-`Read the Docs <https://readthedocs.org/>`_ is popular continuous delivery service for Sphinx documentation, and we have used it widely for technical notes and design documents.
+`Read the Docs <https://readthedocs.org/>`_ is a popular continuous delivery service for Sphinx documentation, and we have used it widely for technical notes and design documents.
 However, Read the Docs limits our ability to provision new documentation projects through an well-defined API, and more fundamentally, limits our ability to control the build environment for documentation.
 LSST software documentation requires that the software itself be built, which demands a customized build environment.
 To solve these issues, we have built a service described in `SQR-006: Documentation Deployment Service for LSST's Eups-based Software <http://sqr-006.lsst.io/>`_.
+We anticipate that all DM reStructuredText/Sphinx-based documentation projects will be served by LSST the Docs rather than Read the Docs in order to leverage automations and efficiencies built into LSST the Docs.
 
 Domains: lsst.org/codes/io
 --------------------------
@@ -436,35 +436,63 @@ Unlike the lsst.org website, lsst.io is not a point of entry; everything hosted 
 For similar reasons, SQuaRE cloud-based services aimed at DM developers are hosted under the domain lsst.codes.
 There is no public-facing material in the lsst.codes services.
 
-
 Change-Controlled Design Documents
 ==================================
 
-LSST stores deposits copies of all change-controlled documents in Docushare.
-Irrespective of the source and development flow of our documents (be they RST or LaTeX or Word), we continue to do so.
-However our users are unhappy with the Docushare user experience, hence why we do not depend it to be the sole index of our documentation.
+LSST archives copies of all change-controlled documents in Docushare.
+Irrespective of the source and development flow of our documents (be they reStructuredText or LaTeX or Word), we continue to do so.
+However our users are unhappy with the Docushare user experience, hence why we do not depend on it as be the sole index of our documentation.
+(See :ref:`Archives <archives>`, below.)
 
-While we support authors who wish to write documents in the LSST the Doc platform, 
+The LSST the Docs platform was adopted by DM for several design documents.
+The ability to use a standard GitHub-based workflow for collaboration and review, as well as the ability to see the document drafts live on the web, makes LSST the Docs particularly appealing.
+We hope that these design documents will see more frequent updates than the previous generated of Word-based documents.
+When updates to these documents are approved by by the relevant boards, a release tag will be made in the document's GitHub repository and a PDF rendering of the document will be archived in Docushare.
+Because of the advantages of web-native documents, the 'unofficial' version of the document published by LSST the Docs will continue to be the primary way that the design document is viewed, even when it has been archived in Docushare.
+
+Some change-controlled documents are also published as LaTeX documents, under the reasoning that they may be published to arXiv.org or otherwise re-purposed into academic literature.
+We intend to provide some level of continuous integration and web delivery for these documents that are already offered to the reStructuredText-based LSST the Docs-published documents, though we are still planning how to do this most effectively.
 
 Technical Notes
 ===============
 
-Technical notes provide a very quick, very lightweight way of writing
-a short document in the editor of your choice and publishing it.
+Technotes grew out of an organic need to have standalone documents like Change-controlled Design Documents, but that could be used more flexibly and informally to report on DM work.
+For example, Technotes have been used to describe back-end services provided by SQuaRE.
+They have also been used to draft designs for DM system (that are outside the direct scope of change-control); this mode of design improves schedules, improves the quality of the final product, and also facilitates better cross-team collaboration.
+Finally, Technotes have been used to report on data processing experiments with the LSST Stack.
+
+In addition to building upon the web-native and GitHub-based collaboration features of LSST the Docs, Technotes are meant to be visible to the astronomical literature.
+Released versions of technotes are archived in Zenodo (:ref:`see below <archives>`), which assigns a Digital Object Identifier (DOI) to the document.
+In partnership with ADS, the Astrophysics Data System, we are able to list LSST Technotes in the primary astronomy bibliography.
+Our intention is to make more DM work directly citeable in the literature, rather than relying solely on umbrella Project papers and "personal communication" statements. 
+
+We plan to improve the Technote platform as it currently exists.
+Potential improvements include:
+
+- Improved visual design and print (PDF) layout.
+- BibTeX-like citation system for reStructuredText that interacts with online bibliographies, such as ADS.
+- Integration of Jupyter notebooks with Technotes.
+- Integration of Technotes with the Community forum to facilitate discussions surrounding a technote.
+- Improved automation of Technote provisioning.
 
 See `SQR-000: The LSST DM Technical Note Publishing Platform <http://sqr-000.lsst.io/en/master/>`_ for more information.
 
 Developer Guide
 ===============
 
-The DM developer guide is a key document for DM developers as it encapsulates our development policies and practices.
+The DM Developer Guide is a key document for DM developers that encapsulates our development policies and practices.
+This Developer Guide is especially important for on-boarding new team members.
+It is published with LSST the Docs at https://developer.lsst.io.
 
-https://developer.lsst.io
+Although some information published in the developer guide could qualify as technical notes or ad hoc pages in the DM Confluence wiki, we encourage developers to write anything related to DM processes and policies in the Developer Guide so that the information can be quickly discovered by browsing the Developer Guide's table of contents.
+The failure to do this was one reason why the Developer Guide's original incarnation as a Confluence space was unsuccessful.
+That Confluence space was poorly organized and in some cases Developer Guide-like material existed in the Data Management confluence space, rather than the Developer Guide confluence space.
 
-Software Documentation
-======================
-
-[do we need to talk about this?]
+..
+  Software and Data Documentation
+  ===============================
+  
+  [do we need to talk about this?]
 
 .. _archives:
 
@@ -509,7 +537,7 @@ Thus we treat Docushare and Zenodo largely as back-end services necessary for fu
 A Documentation Index
 =====================
 
-[This section describes future work]
+*This section describes future work.*
 
 LSST's documentation, as described above, consists of a constellation of design documents, technical notes, and documentation sites for specific software projects and data releases.
 In addition, DM also produces presentations, conference proceedings and published academic articles.
@@ -520,9 +548,12 @@ We intend to solve the documentation discovery problem with a highly useable, we
 - Dynamically updated when new documents are published by LSST the Docs, or made available in ADS/Zenodo.
 - Full-text search
 - Browse by content type, and also by subject
-- Curated collections of documents (e.g top documentation for scientists).
+- Curated collections of documents (e.g, top documentation for scientists).
 - Awareness of documentation versions; ability to choose a version of the document
 - Landing page should be curated to get readers to top documents, such as the Science Pipelines documentation.
+
+We anticipate that the Documentation Index will be integrated into the Data Management homepage at dm.lsst.org.
+Together with the Community forum, the Documentation Index is the public-facing point of entry into LSST Data Management information.
 
 NASA/SAO Astrophysics Data System (ADS)
 =======================================
