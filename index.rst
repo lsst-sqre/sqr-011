@@ -1,4 +1,4 @@
-:tocdepth: 1
+:tocdepth: 2
 
 .. note::
 
@@ -19,7 +19,7 @@ asynchronous, or broadcast), and task (e.g., work ticketing,
 documenting designs, manuals).
 
 In this document we outline SQuaRE's communication support services
-and speculate now they could be used to support a project-wide
+and explain now they could be used to support a project-wide
 communication strategy.  Note, however, that while we have chosen some
 of these platforms for their ability to support a wider outreach into
 the project and the community, they can all be restricted to their
@@ -35,47 +35,48 @@ that are underway.
 Overview
 ========
 
-During construction, DM is a tightly-knit team with good
+During construction, DM is a closely-knit team with good
 communications practices. Depending on their synchronicity needs,
-developers and scientists are directed by the DM Developer Guide to
-one of our communication platforms at :numref:`platforms` (entries
-marked with an asterisk are planned developments).
+developers and scientists are directed by their Team Lead or the DM
+Developer Guide to one of our communication platforms at
+:numref:`platforms` (entries marked with an asterisk are planned
+developments).
 
 .. _platforms:
 
 .. table:: Main DM Communication Platforms and Intended Audiences
 		   
-   +-------------------------------+----------------------------+
-   |                               | Audience                   |
-   |                               +-------+---------+----------+
-   | Platform                      | DM    | Project | External |
-   +=============+=================+=======+=========+==========+
-   | Chat        | HipChat         | Y     | ~       | N        |
-   |             +-----------------+-------+---------+----------+
-   |             | Slack* (RFC-140)| Y     | ~       | ?        |
-   +-------------+-----------------+-------+---------+----------+
-   | Forum       | Community       | Y     | Y       | Y        |
-   +-------------+-----------------+-------+---------+----------+
-   | Wiki        | Confluence      | Y     | Y       | read     |
-   +-------------+-----------------+-------+---------+----------+
-   | Bugs,       | JIRA            | Y     | Y       | read     |
-   | Patches     +-----------------+-------+---------+----------+
-   |             | GitHub          | N     | N       | Y        |
-   +-------------+-----------------+-------+---------+----------+
-   | Doc Indexes | DocHub* API     | Y     | Y       | Y        |
-   +-------------+-----------------+-------+---------+----------+
+   +-----------------------------------+----------------------------+
+   |                                   | Audience                   |
+   |                                   +-------+---------+----------+
+   | Platform                          | DM    | Project | External |
+   +=============+=====================+=======+=========+==========+
+   | Chat        | HipChat             | Y     | ~       | N        |
+   |             +---------------------+-------+---------+----------+
+   |             | Slack* (RFC-140)    | Y     | ~       | ?        |
+   +-------------+---------------------+-------+---------+----------+
+   | Forum       | Community/Discourse | Y     | Y       | Y        |
+   +-------------+---------------------+-------+---------+----------+
+   | Wiki        | Confluence          | Y     | Y       | read     |
+   +-------------+---------------------+-------+---------+----------+
+   | Bugs,       | JIRA                | Y     | Y       | read     |
+   | Patches     +---------------------+-------+---------+----------+
+   |             | GitHub              | N     | N       | Y        |
+   +-------------+---------------------+-------+---------+----------+
+   | Doc Indexes | DocHub* API         | Y     | Y       | Y        |
+   +-------------+---------------------+-------+---------+----------+
 
 .. 
    
 - The Chat platform is used for synchronous communication such as
-  quick informal dicussions and troubleshooting - see ref:`chat`
+  quick informal dicussions and troubleshooting - see :ref:`chat`
 
 - The Forum platform is used both as a broadcast medium
   (announcements) as well as discussions, Q&A, and longer more
-  substantive debate - see ref:`community`
+  substantive debate - see :ref:`community`
 
 - The Wiki is used for meeting minutes, short-term planning documents
-  and internal notes - see ref:`confluence`
+  and internal notes - see :ref:`confluence`
 
 - A number of communication worklows around software development such
   as work tickets, bugs reports, bug fixes and of course new feature
@@ -85,8 +86,13 @@ marked with an asterisk are planned developments).
 - A rich documentation ecosystem brought together by an Index that can
   be generated from an API - see :ref:`DocPubs`
 
+.. _philosophy:
+  
 Philosophy
 ==========
+
+This section underlies some of the engineering and cultural principles
+behind our communication platforms.
 
 Communication and documentation as a shared DM responsibility
 -------------------------------------------------------------
@@ -97,7 +103,7 @@ and documenting DM work.  We use a regular review process to vet
 documentation, either with peers or a Technical Control Team for
 controlled documents.
 
-Traditionally, many organization create participation barriers to
+Traditionally, many organizations create participation barriers to
 their communication platforms through the complexity of systems that
 publish to the web or elsewhere.  As the maintainer and developer of
 DM's communication platforms, SQuaRE is committed to making our
@@ -111,67 +117,73 @@ Making information accessible outside Data Management
 
 As an open source software organization, Data Management is culturally
 aligned with making information openly available beyond the team.
-This is why the community is granted at least read access to nearly
-all DM communication platforms listed in :numref:`platforms`.  While
-all of these artifacts (JIRA tickets, technical notes, Zenodo
-depositions and so on) make sense in their authoring context, we
+This is why the science community is granted at least read access to
+nearly all DM communication platforms listed in :numref:`platforms`
+While all of these artifacts (JIRA tickets, technical notes,
+publications and so on) make sense in their authoring context, we
 recognize that the external community needs a simpler view into LSST
-Data Management information.  Our strategy is to treat only two DM
-platforms as entry points; all other information should be
-discoverable from these platforms.
+Data Management information.
 
-The first entry point is the Community forum.  Questions on the forum
-will be answered with links to documents deeper in the DM information
-hierarchy, such as pages in software documentation, technical notes,
-and so forth.  The community forum, in essence becomes an interactive
-search engine into LSST's documentation, in addition to being a space
-to discover gaps in our documentation and draft new content.  :ref:`We
-specifically discusss the Community forum later in this technical
-note. <community>`.
+Our strategy is to treat only two DM platforms as entry points; all
+other information should be discoverable from these platforms.
 
-(Also, since DM's information is accessible on the open web---without
-login walls---we also organically benefit from web search and social
-media entry points.  DM's documentation, itself, is also highly
-self-referential.)
+- The first entry point is the Community forum.  Questions on the
+  forum will be answered with links to documents deeper in the DM
+  information hierarchy, such as pages in software documentation,
+  technical notes, and so forth.  The community forum, in essence
+  becomes an interactive search engine into LSST's documentation, in
+  addition to being a space to discover gaps in our documentation and
+  draft new content.  :ref:`We specifically discusss the Community
+  forum later in this technical note. <community>`.
 
-The second entry point is a *planned* Data Management Documentation
-Index web site.  Where the Community forum is highly contextual and
-serendipitous, the Documentation Index support systematic and
-comprehensive documentation discovery.  We will allow readers to
-browse DM documents by type (software documentation, design document,
-technical note, presentation, paper, source code), subject area, as
-well as full-text search.  The Documentation Index will also have
-curated categories to highlight new and key information for user
-groups.  The Documentation Index will kept up-to-date by hooking into
-the LSST the Docs, Zenodo, and ADS platforms that host or archive DM's
-artifacts.  :ref:`We discuss the Documentation Index later in this
-technical note. <doc-index>`.
+  (Also, since DM's information is accessible on the open
+  web---without login walls---we also organically benefit from web
+  search and social media entry points.  DM's documentation, itself,
+  is also highly cross-referential.)
+
+- The second entry point is a *planned* Data Management Documentation
+  Index web site.  Where the Community forum is highly contextual and
+  serendipitous, the Documentation Index support systematic and
+  comprehensive documentation discovery.  We will allow readers to
+  browse DM documents by type (software documentation, design
+  document, technical note, presentation, paper, source code), subject
+  area, as well as full-text search.  The Documentation Index will
+  also have curated categories to highlight new and key information
+  for user groups.  The Documentation Index will kept up-to-date by
+  utilising a "DocHub" API exposing data from LSST the Docs, Zenodo,
+  and ADS platforms that host or archive DM's artifacts.  :ref:`We
+  discuss the Documentation Index later in this technical
+  note. <doc-index>`.
 
 Again, the advantage of this architecture is that DM only needs to
 promote two URLs to the community to effectively market our entire
-information portfolio.
+information portfolio. Also, in the case of the the Documentation
+Index, it allows the advantages of a single point of entry for the
+user, while enabling content providers to utilise the best
+documentation repository solution for their workflow.
 
 Construction & Beyond
 =====================
 
 Like all of SQuaRE-developed systems, the primary requirement is to
-satisfy DM's needs into construction; however we remain cognizant of
-the intense demands of commissioning, and the need to bequeath
-robust automated low-maintainance systems to operations.
+satisfy DM's needs into Construction; however we remain cognizant of
+the intense demands of Commissioning, and the need to bequeath
+robust automated low-maintainance systems to Operations.
 
-To this end we either
+To this end we either:
 
 - Make use of popular cloud-hosted services (supported by the
   provider); even if these services get superseded by more attractive
   services in the future, it is likely that the new games in town will
-  have an easy migration path from existing services.
+  have an easy migration path from existing services. 
 
-- Develop our own services, engineered with configuration management
-  and virtualised architectures for easy deployment anywhere. 
+- Develop our own services, engineered with a self-serve philosophy,
+  and configuration management and virtualised architectures for easy
+  deployment anywhere.
 
 We generally do not favour self-hosting commercial products, as they
 are frequently the worst of both worlds; in some cases we are forced
-to do it due to pricing or performance considerations. 
+to do it due to pricing or performance considerations.
 
 How tools are selected
 ======================
@@ -197,9 +209,10 @@ How do we select that tool? We weigh in a number of factors:
 - Prevailing usage outside the project (*Do our collaborators or shared
   staff use this tool in their other projects?*).
 
-- Cost (after seeking open source or non-profit discounting).
+- Cost (after seeking open source or non-profit discounting, but
+  mindful of the "hidden" cost of developer time).
 
-- Cost/Benefit of effort required for migration, when a previous tool
+- Cost/Benefit of effort required for migration, where a previous tool
   has already been used in that space.
 
 
@@ -212,8 +225,8 @@ DM makes extensive use of chat (currently the HipChat service by
 Atlassian) as a replacement to hallway and office conversations that
 would happen naturally in a co-located organization, and locally as a
 way to seek near-synchronous help without disturbing someone who is
-busy.  HipChat is currently considered to be an internal DM platform,
-through there is some participation from other subsystems.
+thinking.  HipChat is currently considered to be an internal DM
+platform, through there is some participation from other subsystems.
 
 Our Chat platform is divided into several rooms to scope the
 conversations.  For example, the 'Data Management' room hosts generic
@@ -242,48 +255,55 @@ important chat conversations to better venues:
 - Data Management category in the Community forum for complex yet
   informal discussions
 
-- The Request for Discussion (|rfd|) to schedule a time slot for a
-  video conference-based discussion
+- The Request for Discussion (|rfd|) JIRA project to schedule a time
+  slot for a video conference-based discussion
 
-- The Request for Comments (|rfc|) to formally propose and gain
-  feedback on a proposal that has design or process ramifications.
+- The Request for Comments (|rfc|) JIRA project to formally propose
+  and gain feedback on a proposal that has design or process
+  ramifications.
 
 - Problems reported on Chat are often fixed in real time. When it is
-  not possible to do so, a work ticket is filed.
+  not possible to do so, a work JIRA ticket is filed.
 
 It is important to note that while Chat is a stunningly effective
 platform for mentoring and in-team troubleshooting, it does not scale
-as a support medium in many circumstances, particularly it lacks the
-StackOverflow effect: you can't easily come to find an answer, realize
-that someone has already asked it and gotten a pertinent answer, and
-leave satisfied without even having had to disturb a DM developer.
+as a support medium in many circumstances, particularly as it lacks
+the StackOverflow effect: you can't easily come to find an answer,
+realize that someone has already asked it and gotten a pertinent
+answer, and leave satisfied without even having had to disturb a DM
+developer. The traditional user support Forum (for us, Community) is
+much more suitable for external user support.
 
 However we do foresee that there will be members of the scientific
 community who will wish to engage with DM as developers rather than
-passive users.  So our recommendation is to adopt platforms that make
-it easy and cheap to an external users to the chat system, while at
-the same time treating the chat system for those users as a last
-resort.
+consumers.  So our recommendation is to adopt platforms that make it
+easy and cheap to add external users to the chat system, while at the
+same time treating the chat system for those users as a last
+resort. So we envisage starting a slow asynchronous dicussion with a
+user on Community, and if the situation demands it, pulling them into
+Chat. We are particularly thinking about Commissioning, where we might
+want "many eyes" to bear on a problem.
 
 ChatOps
 -------
 
-We also use Chat for real time monitoring of software builds and tests
-and to automatically broadcast announcements of |rfc|\ s/|rfd|\ s.
-This is a basic form of *ChatOps,* where infrastructure is controlled
-through a chat interface.  Companies like GitHub, for example, use
-ChatOps to control servers and react to operational events.  The
-advantage of doing this is that diverse and geographically distributed
-teams can collaborate in real-time.  DM and SQuaRE would like to
-expand our use of Chat into ChatOps, likely with `StackStorm and Hubot
+We also use Chat for engineering purposes, such as real time
+monitoring of software builds and tests and to automatically broadcast
+announcements of |rfc|\ s/|rfd|\ s.  This is a basic form of
+*ChatOps,* where infrastructure is controlled through a chat
+interface.  Companies like GitHub, for example, use ChatOps to control
+servers and react to operational events.  The advantage of doing this
+is that diverse and geographically distributed teams can collaborate
+in real-time.  SQuaRE plans to expand our use of Chat into ChatOps,
+likely with `StackStorm and Hubot
 <http://stackstorm.com/2015/06/08/enhanced-chatops-from-stackstorm/>`_,
-though this work is not yet planned.
+though this work is not yet scheduled.
 
 ChatOps services always require some level of development for bots
 that interface in-house services to the chat system.  This is why the
 standard and level of maturity of APIs and available off-the-shelf
-integrations is of high interest to SQuaRE, who is the most likely
-source of effort for this development.
+integrations of chat services is of high interest to SQuaRE, who is
+the most likely source of effort for this development.
 
 .. _slack:
 
@@ -317,7 +337,8 @@ as DM's platform for long-form asynchronous discussions and
 announcements to the community.  Community was also a response to the
 desire of the senior DM scientists to reach out to important
 scientific collaborations with which DM has obvious common topics of
-interest (e.g., the DESC collaboration).
+interest (e.g., the DESC collaboration) without having them flood our
+Chat channels.
 
 We see Community growing into a larger role by first servicing more
 LSST project subsystems, and ultimately becoming a place where
@@ -446,11 +467,13 @@ categories.  Currently this assignment is managed manually by SQuaRE
 and DM T/CAMs.  As Community's use grows across the project, this may
 arrangement will scale poorly.
 
-SQuaRE is highly desirous of interfacing to the LSST Contacts via a
-standard programmatic API, which is not possible with the current
-Contacts DB implementation in order to ensure that group access in
-Community and other SQuaRE services is kept in sync with the Project's
-master list.
+.. note::
+
+   SQuaRE is highly desirous of interfacing to the LSST Contacts via a
+   standard programmatic API, which is not possible with the current
+   Contacts DB implementation in order to ensure that group access in
+   Community and other SQuaRE services is kept in sync with the
+   Project's master list.
 
 .. _confluence:
 
@@ -475,7 +498,7 @@ https://developer.lsst.io.
 The LSST Software User Guide will be replaced by software
 documentation published through |ltd|.
 
-In our view, acceptable uses for the Wikis include:
+In our view, appropriate uses for the Wikis include:
 
 - Meeting notes, especially with action-item assignment (although
   there is an emerging preference to summarize conferences and |rfd|
@@ -502,7 +525,7 @@ official documentation repositories.
 
 We would like to see some centralised project support to extend
 popularly used collaboration services such as Dropbox to the whole
-team, instead of having people use their personal accounts. 
+team, instead of having people use their personal accounts for this.
 
 .. _tickets:
 
@@ -548,7 +571,7 @@ issues, an external user would likely not make the effort to find out
 how to report a bug.
 
 Our current policy is to to triage these GitHub issues into JIRA
-tickets.
+tickets where they result in an actionable work ticket. 
 
 See also `RFC-147 'Best practices to report an issue with DM system'
 <https://jira.lsstcorp.org/browse/RFC-147>`_ for discussion
@@ -559,8 +582,8 @@ surrounding how to support bug reports from the community.
 Request for Comments (RFC)
 --------------------------
 
-The RFC process is a core part of DM's decision making process and a
-vital foundation of the team's culture.  We use RFCs to allow anyone
+The RFC process is a core part of DM's decision making process and is
+a vital foundation of the team's culture.  We use RFCs to allow anyone
 in the team to propose work that has ramifications across DM while
 also giving all team members an opportunity to comment if they are
 affected.  RFCs may be issued for changes in third-party dependencies,
@@ -586,13 +609,13 @@ slot.
 See the `Developer Guide <http://developer.lsst.io/en/latest/processes/decision_process.html#request-for-discussion-rfd-process>`_ for more information.
 
 
-.. _LTD: DocPubs
+.. _DocPubs:
 
 Docuementation & Publications
 =============================
 
 Easy to produce, easy to maintain, easy to test and easy to find
-documentation is a core oart of SQuaRE's contribution to DM. 
+documentation is a core part of SQuaRE's contribution to DM. 
 
 A Documentation Index
 ----------------------
@@ -678,10 +701,10 @@ source community.
 
 *LSST the Docs* can be summarized by a stack of technologies:
 reStructuredText, GitHub, Sphinx, and the *LSST the Docs* continuous
-delivery service.  The name *LSST the Docs" is in reference to the
+delivery service.  The name *LSST the Docs* is in reference to the
 highly popular documentation service *Read the Docs*---we explain
-below why we could not just us that service off the shelf (which is
-normally our preference).
+below why we could not just us that service off the shelf (which would
+have been more aligned with our :ref:`philosophy`).
 
 
 ReStructuredText
@@ -866,14 +889,23 @@ space was poorly organized and in some cases Developer Guide-like
 material existed in the Data Management confluence space, rather than
 the Developer Guide confluence space.
 
-..  Software and Data Documentation ===============================
-  
-  [do we need to talk about this?]
+Software Manuals and Data Documentation
+---------------------------------------
 
+Software manuals and data documentation will also use the :ref:`LTD`
+system for publication. SQuaRE plans for the software documentation to
+include a rich user experience with tutorials, runnable code (Jupyter
+notebooks) and dynamic examples. These will be continuously integrated
+for accuracy and managed on Github to use our standard peer review
+code development process.
+
+Standard content management systems are hence not fit for this
+purpose.
+  
 .. _archives:
 
 Digital Archives: Docushare & Zenodo
-------------------------------------
+====================================
 
 DM makes use of Docushare and Zenodo are archival services for our
 released documentation artifacts.
@@ -882,8 +914,9 @@ Docushare
 ---------
 
 As is standard practice in LSST, Docushare is used to archive all
-approved changed-controlled documents.  Our standard practice is to
-generate and deposit PDFs of the original web document into Docushare.
+baslined changed-controlled documents.  Our standard practice is to
+generate and deposit PDFs of the original content document (whatever
+it is original form - Word, LaTeX or ResT/web) into Docushare.
 
 Zenodo
 ------
@@ -894,8 +927,8 @@ Identifiers (DOIs).  DOIs allow digital artifacts to be cited in
 academic literature.  DM uses Zenodo to archive released versions of
 our documents that are relevant to scientific literature, such as
 technical notes, presentations, software, and software documentation.
-Note that the LSST Publication Board has also adopted Zenodo as an
-archive for LSST presentations.
+The LSST Publication Board is also adopting Zenodo as an archive
+for LSST presentations (see :ref:`pub-board`).
 
 Any researcher can upload artifacts to Zenodo and receive a DOI.
 Curation occurs when an artifact is submitted to a Zenodo Community.
@@ -937,8 +970,10 @@ the NASA/SAO Astrophysics Data System.  ADS is an immensely successful
 literature database for astronomy such that being part of the
 astronomical literature is synonymous with being listed on ADS.  Thus
 we list DM technical notes on ADS so that they can be cited in
-literature.  Note that Zenodo is key to this process since Zenodo
+literature.  The Zenodo platform is key to this process since Zenodo
 furnishes the DOI and archival assurances required by ADS.
+
+.. _pub-board:
 
 Science Publications & Presentations
 ====================================
