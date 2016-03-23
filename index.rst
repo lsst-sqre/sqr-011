@@ -69,7 +69,7 @@ developments).
 .. 
    
 - The Chat platform is used for synchronous communication such as
-  quick informal dicussions and troubleshooting - see :ref:`chat`
+  quick informal discussions and troubleshooting - see :ref:`chat`
 
 - The Forum platform is used both as a broadcast medium
   (announcements) as well as discussions, Q&A, and longer more
@@ -78,9 +78,9 @@ developments).
 - The Wiki is used for meeting minutes, short-term planning documents
   and internal notes - see :ref:`confluence`
 
-- A number of communication worklows around software development such
+- A number of communication workflows around software development such
   as work tickets, bugs reports, bug fixes and of course new feature
-  development are based on Github and tracked through JIRA - see
+  development are based on GitHub and tracked through JIRA - see
   :ref:`tickets`
 
 - A rich documentation ecosystem brought together by an Index that can
@@ -150,16 +150,16 @@ other information should be discoverable from these platforms.
   area, as well as full-text search.  The Documentation Index will
   also have curated categories to highlight new and key information
   for user groups.  The Documentation Index will kept up-to-date by
-  utilising a "DocHub" API exposing data from LSST the Docs, Zenodo,
+  utilizing a "DocHub" API exposing data from LSST the Docs, Zenodo,
   and ADS platforms that host or archive DM's artifacts.  :ref:`We
   discuss the Documentation Index later in this technical
   note. <doc-index>`.
 
 Again, the advantage of this architecture is that DM only needs to
 promote two URLs to the community to effectively market our entire
-information portfolio. Also, in the case of the the Documentation
+information portfolio. Also, in the case of the Documentation
 Index, it allows the advantages of a single point of entry for the
-user, while enabling content providers to utilise the best
+user, while enabling content providers to utilize the best
 documentation repository solution for their workflow.
 
 Construction & Beyond
@@ -168,7 +168,7 @@ Construction & Beyond
 Like all of SQuaRE-developed systems, the primary requirement is to
 satisfy DM's needs into Construction; however we remain cognizant of
 the intense demands of Commissioning, and the need to bequeath
-robust automated low-maintainance systems to Operations.
+robust automated low-maintenance systems to Operations.
 
 To this end we either:
 
@@ -181,7 +181,7 @@ To this end we either:
   and configuration management and virtualised architectures for easy
   deployment anywhere.
 
-We generally do not favour self-hosting commercial products, as they
+We generally do not favor self-hosting commercial products, as they
 are frequently the worst of both worlds; in some cases we are forced
 to do it due to pricing or performance considerations.
 
@@ -279,7 +279,7 @@ community who will wish to engage with DM as developers rather than
 consumers.  So our recommendation is to adopt platforms that make it
 easy and cheap to add external users to the chat system, while at the
 same time treating the chat system for those users as a last
-resort. So we envisage starting a slow asynchronous dicussion with a
+resort. So we envisage starting a slow asynchronous discussion with a
 user on Community, and if the situation demands it, pulling them into
 Chat. We are particularly thinking about Commissioning, where we might
 want "many eyes" to bear on a problem.
@@ -397,16 +397,14 @@ Categories and the organization of conversations
 
    ``Data Management`` also includes several sub-categories:
 
-   `DM Notifications
-      <https://community.lsst.org/c/dm/dm-notifications>`_ Brief
-      broadcasts within the DM to alert team members of new features
-      or changes to the software stack and infrastructure.
+   `DM Notifications <https://community.lsst.org/c/dm/dm-notifications>`_
+      Brief broadcasts within the DM to alert team members of new features or changes to the software stack and infrastructure.
 
-      DM Notifications also hosts our weekly `DM Activity Highlights
-      series <https://community.lsst.org/tags/dm-highlights>`_ series
+      DM Notifications also hosts our weekly `DM Activity Highlights series <https://community.lsst.org/tags/dm-highlights>`_ series
       that summarizes DM activity at very technical level.
    
-   DM Team A category visible only to members of the ``LSSTDM`` group
+   DM Team
+      A category visible only to members of the ``LSSTDM`` group
       (seldom used given our policy of open communication)
 
 `Support <https://community.lsst.org/c/qa>`_ Question-and-answer
@@ -456,7 +454,7 @@ forwarded email contains the text of the original topic post along
 with an unambiguous button inviting readers to participate in the
 discussion on https://community.lsst.org.  Echoing forum activity to
 an e-mail gateway has been common practice since the early days of the
-Internet.  SQuaRE uses Mandrill, by Mailchimp, to send these emails.
+Internet.  SQuaRE uses Mandrill, by MailChimp, to send these emails.
 
 Project group management
 ------------------------
@@ -628,7 +626,7 @@ articles.  For these to documents to be effective, they need to be
 discoverable.
 
 We intend to solve the documentation discovery problem with a highly
-useable, well publicized, central documentation landing page.
+usable, well publicized, central documentation landing page.
 
 - Dynamically updated when new documents are published by LSST the
   Docs, or made available in ADS/Zenodo.
@@ -644,7 +642,7 @@ useable, well publicized, central documentation landing page.
 We intend to expose indexing services via an API codenamed
 DocHub. This would allow the global Documentation Index to be
 integrated into the Data Management homepage at dm.lsst.org as well as
-more specific indexes (eg "all RFCs" or "10 most cited papers") to be
+more specific indexes (e.g., "all RFCs" or "10 most cited papers") to be
 embedded by web authors on our website, or used for generating
 dashboards.
 
@@ -896,7 +894,7 @@ Software manuals and data documentation will also use the :ref:`LTD`
 system for publication. SQuaRE plans for the software documentation to
 include a rich user experience with tutorials, runnable code (Jupyter
 notebooks) and dynamic examples. These will be continuously integrated
-for accuracy and managed on Github to use our standard peer review
+for accuracy and managed on GitHub to use our standard peer review
 code development process.
 
 Standard content management systems are hence not fit for this
@@ -914,9 +912,9 @@ Docushare
 ---------
 
 As is standard practice in LSST, Docushare is used to archive all
-baslined changed-controlled documents.  Our standard practice is to
+baselined changed-controlled documents.  Our standard practice is to
 generate and deposit PDFs of the original content document (whatever
-it is original form - Word, LaTeX or ResT/web) into Docushare.
+it is original form---Word, LaTeX or reST/web) into Docushare.
 
 Zenodo
 ------
@@ -936,7 +934,7 @@ We curate an `LSST Data Management (lsst-dm) community
 <http://zenodo.org/lsst-dm>`_ on Zenodo that *can* be browsed.
 
 Metadata preparation is a barrier to uploading to Zenodo.  We are
-building a Python tool, Zenodio <http://zenodio.lsst.io>`_, to help
+building a Python tool, `Zenodio <http://zenodio.lsst.io>`_, to help
 automate the process of completing deposition metadata and uploading
 to Zenodo.  Our technical note and design document repositories, for
 instance, include user-editable metadata files that are used by LSST
@@ -944,7 +942,7 @@ the Docs and Zenodio tools.  We also expect that Zenodo will make it
 possible for Community curators to edit the metadata of accepted
 artifacts.
 
-Archives as band-end services
+Archives as back-end services
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Although these archives serve necessary and useful functions, we do
@@ -963,7 +961,7 @@ or academic publishers.
 NASA/SAO Astrophysics Data System (ADS)
 ---------------------------------------
 
-*This section descries future work.*
+*This section describes future work.*
 
 In addition to our own Document Index, we also also push documents to
 the NASA/SAO Astrophysics Data System.  ADS is an immensely successful
@@ -988,7 +986,7 @@ etc.
 
 SQuaRE is working with the LSST Publications Board to identify areas
 of synergy in which we can leverage our documentation platforms for
-promoting citable artefact discovery. 
+promoting citeable artifact discovery. 
 
 
 .. |clo| replace:: Community_
