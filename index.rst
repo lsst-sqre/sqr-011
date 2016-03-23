@@ -611,7 +611,7 @@ See the `Developer Guide <http://developer.lsst.io/en/latest/processes/decision_
 
 .. _DocPubs:
 
-Docuementation & Publications
+Documentation & Publications
 =============================
 
 Easy to produce, easy to maintain, easy to test and easy to find
