@@ -12,9 +12,9 @@
 
 LSST Data Management uses a number of technical communication and
 documentation platforms to address our needs, with the SQuaRE team
-leading the management (and development, when necessary) of these
-platforms.  Each platform addresses a specific niche of audience (DM,
-Project or our science community), synchronicity (real-time,
+often leading the management (and development, when necessary) of
+these platforms.  Each platform addresses a specific niche of audience
+(DM, Project or our science community), synchronicity (real-time,
 asynchronous, or broadcast), and task (e.g., work ticketing,
 documenting designs, manuals).
 
@@ -30,100 +30,62 @@ DM's communications platform strategy has evolved rapidly since Summer
 document also takes the opportunity to foreshadow platform migrations
 that are underway.
 
-How tools are selected
-======================
-
-With all communication tools, there is always a balance of providing
-users a diversity of tools that they want to use and consolidating
-tools so that information does not fragment.  We have found that the
-parameter space of task, synchronicity and audience do require
-multiple tools, but we favor only having one supported tool for each
-locus in that space.
-
-How do we select that tool? We weigh in a number of factors:
-
-- Ease of development with the tool (*Can we build the services we
-  need around this tool?*).
-
-- Quality of support for the tool (rate of bug fixes, new features,
-  for example).
-
-- User preference within the project (polling, discussions).
-
-- Prevailing usage outside the project (do our collaborators or shared
-  staff use this tool in their other projects?).
-
-- Cost (after seeking open source or non-profit discounting).
-
-- Cost/Benefit of effort required for migration, when a previous tool
-  has already been used in that space.
-
 .. _overview:
 
 Overview
 ========
 
-This table is a summary of the DM communication platforms, along with
-our current understanding of how the various tools and platforms cover
-the audience space.
+During construction, DM is a tightly-knit team with good
+communications practices. Depending on their synchronicity needs,
+developers and scientists are directed by the DM Developer Guide to
+one of our communication platforms at :numref:`platforms` (entries
+marked with an asterisk are planned developments).
 
 .. _platforms:
 
-.. table:: DM Communication Platforms and Intended Audiences
-
+.. table:: Main DM Communication Platforms and Intended Audiences
+		   
    +-------------------------------+----------------------------+
    |                               | Audience                   |
    |                               +-------+---------+----------+
    | Platform                      | DM    | Project | External |
    +======+========================+=======+=========+==========+
-   | Chat | HipChat                | Y     | ~       | N        |
-   |      +------------------------+-------+---------+----------+
-   |      | Slack (RFC-140)        | Y     | ~       | possible |
-   +------+------------------------+-------+---------+----------+
-   | Community                     | Y     | Y       | Y        |
+   | Chat        | HipChat         | Y     | ~       | N        |
+   |             +-----------------+-------+---------+----------+
+   |             | Slack* (RFC-140)| Y     | ~       | ?        |
    +-------------------------------+-------+---------+----------+
-   | Confluence                    | Y     | Y       | read     |
+   | Forum       | Community       | Y     | Y       | Y        |
+   +-------------+-----------------+-------+---------+----------+
+   | Wiki        | Confluence      | Y     | Y       | read     |
    +-------------------------------+-------+---------+----------+
-   | JIRA Tickets                  | Y     | Y       | read     |
+   | Bugs,       | JIRA            | Y     | Y       | read     |
+   | Patches     +-----------------+-------+---------+----------+
+   |             | GitHub          | N     | N       | Y        |
    +-------------------------------+-------+---------+----------+
-   | GitHub Issues                 | N     | N       | Y        |
-   +-------------------------------+-------+---------+----------+
-   | GitHub Pull Requests          | Y     | Y       | Y        |
-   +-------------------------------+-------+---------+----------+
-   | Request for Comments (RFC)    | Y     | ~       | read     |
-   +---------------+---------------+-------+---------+----------+
-   | Design        | LSST the Docs | Y     | read    | read     |
-   | Documentation +---------------+-------+---------+----------+
-   |               | Docushare     | Y     | Y       | ?        |
-   +---------------+---------------+-------+---------+----------+
-   | Technical Notes               | Y     | ?       | read     |
-   +-------------------------------+-------+---------+----------+
-   | Developer Guide               | Y     | read    | read     |
-   +-------------------------------+-------+---------+----------+
-   | Software Docs                 | Y     | read    | read     |
-   +-------------------------------+-------+---------+----------+
-   | Documentation Index           | read  | read    | read     |
-   +-------------------------------+-------+---------+----------+
-   | NASA/SAO ADS                  | ~     | ~       | read     |
-   +-------------------------------+-------+---------+----------+
-   | Zenodo                        | write | ~       | ~        |
-   +-------------------------------+-------+---------+----------+
-   | Docushare                     | write | Y       | ~        |
-   +-------------------------------+-------+---------+----------+
+   | Doc Indexes | DocHub* API     | Y     | Y       | Y        |
+   +-------------+-----------------+-------+---------+----------+
 
-On a moment-by-moment basis, DM team members use Chat, JIRA tickets
-and GitHub Pull Request threads to collaborate.  More asynchronously,
-we use the Community forum to have long-form conversations and
-broadcast announcements, use the Confluence wiki for posting ad-hoc
-information, and use Request for Comments (RFC) to make decisions.
-Finally, we use the LSST the Docs platform to document designs (Design
-Documents) and processes (Developer Guides), report on work and
-experiments (Technical Notes), and document our software for both
-internal and external users.  Document indices, such as the DM
-Documenation Index and the NASA/SAO Astrophysics Data System ensure
-that DM communications are discoverable.  Finally, we use archives
-such as Zenodo and Docushare, though these are not intended to be
-user-facing services.
+.. 
+   
+- The Chat platform is used for synchronous communication such as
+  quick informal dicussions and troubleshooting - see ref:`chat`
+
+- The Forum platform is used both as a broadcast medium
+  (announcements) as well as discussions, Q&A, and longer more
+  substantive debate - see ref:`community`
+
+- The Wiki is used for meeting minutes, short-term planning documents
+  and internal notes - see ref:`confluence`
+
+- A number of communication worklows around software development such
+  as work tickets, bugs reports, bug fixes and of course new feature
+  development are based on Github and tracked through JIRA - see
+  :ref:`tickets`
+
+- A
+
+Philosophy
+==========
 
 Communication and documentation as a shared DM responsibility
 -------------------------------------------------------------
@@ -140,8 +102,8 @@ publish to the web or elsewhere.  As the maintainer and developer of
 DM's communication platforms, SQuaRE is committed to making our
 platforms accessible and easy to use through automation.  For example,
 our aim is to allow a team member to publish a new technical note to
-the web immediately, or update software documentation without any
-effort beyond writing the content itself.
+the web immediately, or update software documentation with minimal
+effort and without needing assistance or permission. 
 
 Making information accessible outside Data Management
 -----------------------------------------------------
@@ -187,6 +149,58 @@ technical note. <doc-index>`.
 Again, the advantage of this architecture is that DM only needs to
 promote two URLs to the community to effectively market our entire
 information portfolio.
+
+Construction & Beyond
+=====================
+
+Like all of SQuaRE-developed systems, the primary requirement is to
+satisfy DM's needs into construction; however we remain cognizant of
+the intense demands of commissioning, and the need to bequeath
+robust automated low-maintainance systems to operations.
+
+To this end we either
+
+- Make use of popular cloud-hosted services (supported by the
+  provider); even if these services get superseded by more attractive
+  services in the future, it is likely that the new games in town will
+  have an easy migration path from existing services.
+
+- Develop our own services, engineered with configuration management
+  and virtualised architectures for easy deployment anywhere. 
+
+We generally do not favour self-hosting commercial products, as they
+are frequently the worst of both worlds; in some cases we are forced
+to do it due to pricing or performance considerations. 
+
+How tools are selected
+======================
+
+With all communication tools, there is always a balance of providing
+users a diversity of tools that they want to use and consolidating
+tools so that information does not fragment.  We have found that the
+parameter space of task, synchronicity and audience do require
+multiple tools, but we favor only having one supported tool for each
+locus in that space.
+
+How do we select that tool? We weigh in a number of factors:
+
+- Ease of development with the tool (*Can we build the services we
+  need around this tool?*).
+
+- Quality of support for the tool (*Do the tool developers respond
+  quickly to questions, fix bugs, release new features?*).
+
+- User preference within the project (*Are users advocation for a
+  particular tool?*).
+
+- Prevailing usage outside the project (*Do our collaborators or shared
+  staff use this tool in their other projects?*).
+
+- Cost (after seeking open source or non-profit discounting).
+
+- Cost/Benefit of effort required for migration, when a previous tool
+  has already been used in that space.
+
 
 .. _chat:
 
@@ -315,7 +329,6 @@ are:
 - *Native to the web.* This allows individual topics and posts to be
   linked to from documents and social media.  Search engines such also
   Google also index the conversations on Community.
-
 
 - *A delightful user experience.* Whereas JIRA and Confluence are
   powerful platforms, they lack Discourse's sensitivity to the
@@ -474,6 +487,22 @@ Unfortunately, DM never completed its migration to Confluence from its
 previous wiki, TRAC.  This migration is a background activity across
 DM that occasionally sees fits of progress.
 
+Draft document collaboration
+============================
+
+Teams and ad-hoc working groups often use standard commercial services
+such as Google Docs, Google Spreadsheets and Dropbox as ways of
+working on drafts of documents, spreadsheets, presentations etc. 
+
+We are happy for people to use whatever tools make them productive in
+early stages of their thinking. Once the document has matured (and if
+it is not evanescent) we expect it will find its way to one of the
+official documentation repositories. 
+
+We would like to see some centralised project support to extend
+popularly used collaboration services such as Dropbox to the whole
+team, instead of having people use their personal accounts. 
+
 .. _tickets:
 
 Work Ticketing
@@ -527,7 +556,7 @@ surrounding how to support bug reports from the community.
 .. _RFC:
 
 Request for Comments (RFC)
-==========================
+--------------------------
 
 The RFC process is a core part of DM's decision making process and a
 vital foundation of the team's culture.  We use RFCs to allow anyone
@@ -543,7 +572,7 @@ See the `RFC page in the Developer Guide <http://developer.lsst.io/en/latest/pro
 .. _RFD:
 
 Request for Discussion (RFD)
-============================
+----------------------------
 
 Although DM has regular meetings for specific individuals, there is
 often a need to host *ad hoc* video conference meetings to discuss an
@@ -557,8 +586,80 @@ See the `Developer Guide <http://developer.lsst.io/en/latest/processes/decision_
 
 .. _LTD:
 
+Docuementation & Publications
+=============================
+
+Easy to produce, easy to maintain, easy to test and easy to find
+documentation is a core oart of SQuaRE's contribution to DM. 
+
+A Documentation Index
+----------------------
+
+LSST's documentation, as described below, consists of a constellation
+of design documents, technical notes, and documentation sites for
+specific software projects and data releases.  In addition, DM also
+produces presentations, conference proceedings and published academic
+articles.  For these to documents to be effective, they need to be
+discoverable.
+
+We intend to solve the documentation discovery problem with a highly
+useable, well publicized, central documentation landing page.
+
+- Dynamically updated when new documents are published by LSST the
+  Docs, or made available in ADS/Zenodo.
+- Full-text search
+- Browse by content type, and also by subject
+- Curated collections of documents (e.g, top documentation for
+  scientists).
+- Awareness of documentation versions; ability to choose a version of
+  the document
+- Landing page should be curated to get readers to top documents, such
+  as the Science Pipelines documentation.
+
+We intend to expose indexing services via an API codenamed
+DocHub. This would allow the global Documentation Index to be
+integrated into the Data Management homepage at dm.lsst.org as well as
+more specific indexes (eg "all RFCs" or "10 most cited papers") to be
+embedded by web authors on our website, or used for generating
+dashboards.
+
+Together with the Community forum, the Documentation Index is the
+public-facing point of entry into LSST Data Management information.
+
+In the following sections we will discuss the documentation sources
+brought together by the Documentation Index and exposed by the DocHub
+API.
+
+.. _docsources:
+
+.. table:: DM Documentation sources and repositories
+
+   +-------------------------------+----------------------------+
+   |                               | Audience                   |
+   |                               +-------+---------+----------+
+   | Platform                      | DM    | Project | External |
+   +======+========================+=======+=========+==========+
+   | Design        | LSST the Docs | Y     | read    | read     |
+   | Documentation +---------------+-------+---------+----------+
+   |               | Docushare     | Y     | Y       | ?        |
+   +---------------+---------------+-------+---------+----------+
+   | Technical Notes               | Y     | ?       | read     |
+   +-------------------------------+-------+---------+----------+
+   | Developer Guide               | Y     | read    | read     |
+   +-------------------------------+-------+---------+----------+
+   | Software Docs                 | Y     | read    | read     |
+   +-------------------------------+-------+---------+----------+
+   | Documentation Index           | read  | read    | read     |
+   +-------------------------------+-------+---------+----------+
+   | NASA/SAO ADS                  | ~     | ~       | read     |
+   +-------------------------------+-------+---------+----------+
+   | Zenodo                        | write | ~       | ~        |
+   +-------------------------------+-------+---------+----------+
+   | Docushare                     | write | Y       | ~        |
+   +-------------------------------+-------+---------+----------+
+
 LSST the Docs Publishing Platform
-=================================
+---------------------------------
 
 *LSST the Docs* is a publishing platform and ecosystem that underpins
 DM's various flavors of technical documentation: change-controlled
@@ -579,7 +680,7 @@ normally our preference).
 
 
 ReStructuredText
-----------------
+^^^^^^^^^^^^^^^^
 
 ReStructuredText is a plain-text markup language, similar to Markdown
 and LaTeX.  We specifically chose reStructuredText because it *the*
@@ -592,13 +693,16 @@ short-hand for referencing other DM documents, or a system for citing
 astronomical literature, among other possibilities).
 
 GitHub collaboration
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
-Since they are simple plain text files, reStructuredText documents are managed GitHub and benefit from DM's regular `development workflow <http://developer.lsst.io/en/latest/processes/workflow.html>`_ (including ticketing and reviews).
-This collaboration model is not possible with Confluence wiki pages or word processor files.
+Since they are simple plain text files, reStructuredText documents are
+managed GitHub and benefit from DM's regular `development workflow
+<http://developer.lsst.io/en/latest/processes/workflow.html>`_
+(including ticketing and reviews).  This collaboration model is not
+possible with Confluence wiki pages or word processor files.
 
 Sphinx and web-native documentation
------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 By writing in reStructuredText, we also benefit from the `Sphinx
 <http://www.sphinx-doc.org/en/stable/>`_ tool for building
@@ -626,7 +730,7 @@ In *LSST the Docs*, PDF is treated as an archival format, while the
 web site is the reader-facing product.
 
 Continuous documentation delivery with LSST the Docs
-----------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Continuous delivery describes a process where documentation is ready
 for publication whenever content is changed, thanks to a highly
@@ -652,7 +756,7 @@ order to leverage automations and efficiencies built into LSST the
 Docs.
 
 Domains: lsst.org/codes/io
---------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For the convenience of our users, we generate a unique domain-name for
 each published document, e.g. the developer guide can be found at
@@ -668,7 +772,7 @@ developers are hosted under the domain lsst.codes.  There is no
 public-facing material in the lsst.codes services.
 
 Change-Controlled Design Documents
-==================================
+----------------------------------
 
 LSST archives copies of all change-controlled documents in Docushare.
 Irrespective of the source and development flow of our documents (be
@@ -700,7 +804,7 @@ LSST the Docs-published documents, though we are still planning how to
 do this most effectively.
 
 Technical Notes
-===============
+---------------
 
 Technotes grew out of an organic need to have standalone documents
 like Change-controlled Design Documents, but that could be used more
@@ -739,7 +843,7 @@ See `SQR-000: The LSST DM Technical Note Publishing Platform
 <http://sqr-000.lsst.io/en/master/>`_ for more information.
 
 Developer Guide
-===============
+---------------
 
 The DM Developer Guide is a key document for DM developers that
 encapsulates our development policies and practices.  This Developer
@@ -764,9 +868,10 @@ the Developer Guide confluence space.
 .. _archives:
 
 Digital Archives: Docushare & Zenodo
-====================================
+------------------------------------
 
-DM makes use of Docushare and Zenodo are archival services for our released documentation artifacts.
+DM makes use of Docushare and Zenodo are archival services for our
+released documentation artifacts.
 
 Docushare
 ---------
@@ -802,7 +907,7 @@ possible for Community curators to edit the metadata of accepted
 artifacts.
 
 Archives as band-end services
------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Although these archives serve necessary and useful functions, we do
 not promote these Docushare or Zenodo as user-facing points of entry
@@ -816,39 +921,9 @@ or academic publishers.
 
 .. _doc-index:
 
-A Documentation Index
-=====================
-
-*This section describes future work.*
-
-LSST's documentation, as described above, consists of a constellation
-of design documents, technical notes, and documentation sites for
-specific software projects and data releases.  In addition, DM also
-produces presentations, conference proceedings and published academic
-articles.  For these to documents to be effective, they need to be
-discoverable.
-
-We intend to solve the documentation discovery problem with a highly
-useable, well publicized, central documentation landing page.
-
-- Dynamically updated when new documents are published by LSST the
-  Docs, or made available in ADS/Zenodo.
-- Full-text search
-- Browse by content type, and also by subject
-- Curated collections of documents (e.g, top documentation for
-  scientists).
-- Awareness of documentation versions; ability to choose a version of
-  the document
-- Landing page should be curated to get readers to top documents, such
-  as the Science Pipelines documentation.
-
-We anticipate that the Documentation Index will be integrated into the
-Data Management homepage at dm.lsst.org.  Together with the Community
-forum, the Documentation Index is the public-facing point of entry
-into LSST Data Management information.
 
 NASA/SAO Astrophysics Data System (ADS)
-=======================================
+---------------------------------------
 
 *This section descries future work.*
 
@@ -859,6 +934,22 @@ astronomical literature is synonymous with being listed on ADS.  Thus
 we list DM technical notes on ADS so that they can be cited in
 literature.  Note that Zenodo is key to this process since Zenodo
 furnishes the DOI and archival assurances required by ADS.
+
+Science Publications & Presentations
+====================================
+
+The SQuaRE developed documentation platform described above has
+well-defined engineering aims related to supporting software
+development and software use, and has been designed with that in mind.
+
+However it is the case that many of the architectural elements of the
+system can also be used to manage science publications, presentations,
+etc.
+
+SQuaRE is working with the LSST Publications Board to identify areas
+of synergy in which we can leverage our documentation platforms for
+promoting citable artefact discovery. 
+
 
 .. |clo| replace:: Community_
 
