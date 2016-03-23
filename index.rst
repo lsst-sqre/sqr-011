@@ -49,19 +49,19 @@ marked with an asterisk are planned developments).
    |                               | Audience                   |
    |                               +-------+---------+----------+
    | Platform                      | DM    | Project | External |
-   +======+========================+=======+=========+==========+
+   +=============+=================+=======+=========+==========+
    | Chat        | HipChat         | Y     | ~       | N        |
    |             +-----------------+-------+---------+----------+
    |             | Slack* (RFC-140)| Y     | ~       | ?        |
-   +-------------------------------+-------+---------+----------+
+   +-------------+-----------------+-------+---------+----------+
    | Forum       | Community       | Y     | Y       | Y        |
    +-------------+-----------------+-------+---------+----------+
    | Wiki        | Confluence      | Y     | Y       | read     |
-   +-------------------------------+-------+---------+----------+
+   +-------------+-----------------+-------+---------+----------+
    | Bugs,       | JIRA            | Y     | Y       | read     |
    | Patches     +-----------------+-------+---------+----------+
    |             | GitHub          | N     | N       | Y        |
-   +-------------------------------+-------+---------+----------+
+   +-------------+-----------------+-------+---------+----------+
    | Doc Indexes | DocHub* API     | Y     | Y       | Y        |
    +-------------+-----------------+-------+---------+----------+
 
@@ -82,7 +82,8 @@ marked with an asterisk are planned developments).
   development are based on Github and tracked through JIRA - see
   :ref:`tickets`
 
-- A
+- A rich documentation ecosystem brought together by an Index that can
+  be generated from an API - see :ref:`DocPubs`
 
 Philosophy
 ==========
@@ -584,7 +585,8 @@ slot.
 
 See the `Developer Guide <http://developer.lsst.io/en/latest/processes/decision_process.html#request-for-discussion-rfd-process>`_ for more information.
 
-.. _LTD:
+
+.. _LTD: DocPubs
 
 Docuementation & Publications
 =============================
@@ -657,6 +659,9 @@ API.
    +-------------------------------+-------+---------+----------+
    | Docushare                     | write | Y       | ~        |
    +-------------------------------+-------+---------+----------+
+
+
+.. _LTD:
 
 LSST the Docs Publishing Platform
 ---------------------------------
