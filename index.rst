@@ -517,13 +517,18 @@ Draft document collaboration
 ============================
 
 Teams and ad-hoc working groups often use standard commercial services
-such as Google Docs, Google Spreadsheets and Dropbox as ways of
-working on drafts of documents, spreadsheets, presentations etc. 
+such as Google Docs, Google Spreadsheets and Dropbox as ways of working on
+drafts of documents, spreadsheets, presentations, etc.. We are happy for
+people to use whatever tools make them productive in early stages of their
+thinking. 
 
-We are happy for people to use whatever tools make them productive in
-early stages of their thinking. Once the document has matured (and if
-it is not evanescent) we expect it will find its way to one of the
-official documentation repositories. 
+Documents on ad-hoc platforms are not expected to be discoverable in any
+automated sense. Users of these platforms should take care to personally
+invite any relevant colleagues to collaborate on these platforms. Once the
+document has matured (and if it is not evanescent) we expect it will find
+its way to one of the official documentation platforms, and be announced
+on the `DM Notifications
+<https://community.lsst.org/c/dm/dm-notifications>`_ forum category.
 
 We would like to see some centralised project support to extend
 popularly used collaboration services such as Dropbox to the whole
