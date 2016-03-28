@@ -384,46 +384,50 @@ are:
 Categories and the organization of conversations
 ------------------------------------------------
 
-`Announcements <https://community.lsst.org/c/announce>`_ For major
-   announcements.  Originally this category was intended to be
+`Announcements <https://community.lsst.org/c/announce>`_
+   For major announcements.  Originally this category was intended to be
    equivalent to the ``dm-announce@lists.lsst.org`` mailing list to
-   announce software releases.  As the scope of Community has grown,
-   the scope of Announcements has also grown to be more
-   Project-holistic.  This is an area where DM collaboration with LSST
-   Communications would be beneficial.
+   announce software releases.  As the scope of Community has grown, the
+   scope of Announcements has also grown to be more Project-holistic.
+   This is an area where DM collaboration with LSST Communications would
+   be beneficial.
 
-`Data Management <https://community.lsst.org/c/dm>`_ Conversations
-   within the DM team, open to the public.
+`Data Management <https://community.lsst.org/c/dm>`_
+   Conversations within the DM team, open to the public.
 
    ``Data Management`` also includes several sub-categories:
 
    `DM Notifications <https://community.lsst.org/c/dm/dm-notifications>`_
-      Brief broadcasts within the DM to alert team members of new features or changes to the software stack and infrastructure.
+      Brief broadcasts within the DM to alert team members of new features
+      or changes to the software stack and infrastructure.
 
-      DM Notifications also hosts our weekly `DM Activity Highlights series <https://community.lsst.org/tags/dm-highlights>`_ series
-      that summarizes DM activity at very technical level.
+      DM Notifications also hosts our weekly `DM Activity Highlights
+      series <https://community.lsst.org/tags/dm-highlights>`_ series that
+      summarizes DM activity at very technical level.
    
    DM Team
       A category visible only to members of the ``LSSTDM`` group
       (seldom used given our policy of open communication)
 
-`Support <https://community.lsst.org/c/qa>`_ Question-and-answer
-   category for users of LSST Software and Data to resolve issues
-   (with DM Staff and other community members).  Accepted solutions
-   are marked to organically build a knowledge base for other users.
+`Support <https://community.lsst.org/c/qa>`_
+   Question-and-answer category for users of LSST Software and Data to
+   resolve issues (with DM Staff and other community members).  Accepted
+   solutions are marked to organically build a knowledge base for other
+   users.
 
-`Simulations <https://community.lsst.org/c/sims>`_ Conversations
-   within the Simulations team, open to the public.
+`Simulations <https://community.lsst.org/c/sims>`_
+   Conversations within the Simulations team, open to the public.
 
-`Camera <https://community.lsst.org/c/camera>`_ Conversations within
-   the Camera team, open to the public.  This category is not actively
-   used.
+`Camera <https://community.lsst.org/c/camera>`_
+   Conversations within the Camera team, open to the public.  This
+   category is not actively used.
 
 `Cross-System Discussions <https://community.lsst.org/c/systems>`_
    This category hosts sub-categories for conversations between LSST
    subsystems to work on interfaces.
 
-LSST Project This category is only visible to LSST project members
+LSST Project
+   This category is only visible to LSST project members
    (``LSST`` group).  It has been used to debrief conferences and
    offer frank discussions.
 
