@@ -1,8 +1,21 @@
 sudo: false
 language: python
-python:
-      - 3.4
-install: "pip install -r requirements.txt"
-script: "make html"
-notifications:
-      email: false
+matrix:
+  include:
+    - python: "3.5"
+      env: LTD_MASON_BUILD=true
+install:
+  - pip install -r requirements.txt
+  - pip install "ltd-mason>=0.2,<0.3"
+script:
+  - sphinx-build -b html -a -n -W -d _build/doctree . _build/html
+after_success:
+  - ltd-mason-travis --html-dir _build/html
+env:
+  global:
+    - LTD_MASON_BUILD=false  # disable builds in regular text matrix
+    - LTD_MASON_PRODUCT="sqr-011"
+    # travis encrypt "LTD_MASON_AWS_ID=... LTD_MASON_AWS_SECRET=..." --add env.global 
+    - secure: "FPCeEX/SwqFI7Qe5rlmmogTFjSAPd+ZGaBHlCJdBSUZNqltwp+AzwfIB55XUTjPhbAxkf5EgGPJAFEjdj9hD4iaIuXEGEBEdosOpD5gpqY4e9nSML93UDXtbyIFv5IzGzv5L8PxK4E6NnnON7RYEaBaQL4ySG7fJq+XyGWSw8f3JQ78gc+oxZkyIJnuANtTDOl8a+lKWjC8oq7hOw+30IaBTuwbGXwbWupP/UHlEJ5UXoWePnZwwLGGVqnD9ojmrJrawbrQRFXyOUDtOEcfNEcrBj8WRb/i5g3fTu5Sx3Iu4dmRZCs0nWL2hVkasCMLpMTTdY7z1quoU9PPUbbpg21E+Hnuv1D5BL7yX8siBlSBmJbZT75VN914OAUi60d8JmsPNRjxK0aUzwFmij6RGRLyZ+ngNjro6TvZo0LOHpET7E7+cAk5P/7YtU1WXZ1aUyD8JAhHvhcha4lUB6C5seJNx/D0r+QSxArjw526ILVe6NtidCsfrE2PE+8NJEgiREAKrNOs9tAvEOuaKrCMsQSDi1M1YxHyIndo+n1S+FaMg31YyugDfsCkMzx2ZReWhGNqTBqZcoNt+22CJCJKpXOYXVAKnxpE9dVZv+oVyaSoQTjjgr2bWU7DfOoesDzX4vPBP2ubE5WWPE1PGaY6JLX8u/yRhDRG9BCw4/c7CJRY="
+    # travis encrypt "LTD_KEEPER_URL=... LTD_KEEPER_USER=... LTD_KEEPER_PASSWORD=..." --add env.global 
+    - secure: "d1lyUkLBckFj5y+NN/m2W4sOXfZcY4W6ORVCLDE+t989Wz1mnoUZci3jJ5XBlp/nAP1M6oVW8gw8mbPDwJfmAtwg7oe/zL/dthz9FnH1ZR+eKfi96HAiE3ZaS1XxChg03drxSLeNokzjun/qh+M538+6/DyPnv1XNqx3P4NJI33rGXH92wtVLvEM7Z5srr+vPWnY9iKI3kTZvKTAmTW/egoRcbJjwms3Y8DuTlHcPVRRSlQoWQsvSZs+9BCxy1Z5VjyQuBmHI7euqoywi3szUEuIZAwW+jGMkzYRNUA+T9PLXYrSW3uJwk81auBd/ZIg1Cj3Ygfdt6rfEsX6Tl9YzEa5l4OffDCb3OW0Z7lNLE+irCg9rJAGWAwFkaFE7cMgbMbDSpKiuE+VuoRyDp879pvPThuXBJBO1RAdUws+1aFDC7AxiD/ldXY4mYrDHQbuSnX1f1ZQRNvNw9j83fAvRAPKKy4kATPY3b/Kx7obe/VTfeX+Yf7+3XWj3FsMn71Kmvm1ttoOnCha5mcgF9Ap1Zy2CEWA5MB/ah60aNbN95oEWnQzSbMrwHi3UlzJLn3W+AlzEGTo4jB8gHloNoliWpGN6j/T5wWkIBnnGuKJydlGgeVGv5JBrtORCdIbDUd1Io7+7S+LZC3drsacy498jbgJpgu4fpDZcjG+3u2JAyA="
