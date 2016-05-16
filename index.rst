@@ -547,7 +547,7 @@ Pull Requests
 
 During a code review, conversations relating to a work ticket shift to
 GitHub's pull request platform, as described in the `Developer Guide
-<http://developer.lsst.io/en/latest/processes/workflow.html#code-review-discussion>`_.
+<http://developer.lsst.io/en/latest/processes/workflow.html#code-review-discussion>`__.
 
 We do this because GitHub Pull Requests allow conversations that are
 tightly coupled to the code.  Also, Pull Requests is how a non-LSST
