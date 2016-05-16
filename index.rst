@@ -1,15 +1,5 @@
 :tocdepth: 2
 
-.. note::
-
-   **DRAFT**
-
-   This document outlines each DM communication platform (including
-   chat, ticketing, forums, technical notes and software
-   documentation) and explains what need it fulfils in DM.  It also
-   sketches out ways in which these platforms could support future
-   project-wide communication strategies under various policies.
-
 LSST Data Management uses a number of technical communication and
 documentation platforms to address our needs, with the SQuaRE team
 often leading the management (and development, when necessary) of
@@ -557,7 +547,7 @@ Pull Requests
 
 During a code review, conversations relating to a work ticket shift to
 GitHub's pull request platform, as described in the `Developer Guide
-<http://developer.lsst.io/en/latest/processes/workflow.html#code-review-discussion>`_.
+<http://developer.lsst.io/en/latest/processes/workflow.html#code-review-discussion>`__.
 
 We do this because GitHub Pull Requests allow conversations that are
 tightly coupled to the code.  Also, Pull Requests is how a non-LSST
