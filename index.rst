@@ -930,7 +930,7 @@ for LSST presentations (see :ref:`pub-board`).
 Any researcher can upload artifacts to Zenodo and receive a DOI.
 Curation occurs when an artifact is submitted to a Zenodo Community.
 We curate an `LSST Data Management (lsst-dm) community
-<http://zenodo.org/collections/user-lsst-dm>`_ on Zenodo that *can* be browsed.
+<http://zenodo.org/collection/user-lsst-dm>`_ on Zenodo that *can* be browsed.
 
 Metadata preparation is a barrier to uploading to Zenodo.  We are
 building a Python tool, `Zenodio <http://zenodio.lsst.io>`_, to help
